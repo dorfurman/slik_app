@@ -1,0 +1,117 @@
+// Color Queries
+$bodyColor: rgb(243, 243, 243);
+$navBlue: #366dbf;
+
+@font-face {
+  font-family: MuseoSans;
+  src: url(./fonts/font.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: visible;
+}
+
+body {
+  background-color: $bodyColor;
+  color: rgb(0, 0, 0);
+  font-family: MuseoSans;
+  width: 100%;
+  height: 100%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+Button {
+  appearance: none;
+  border: none;
+}
+
+#App {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.15fr) 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: $navBlue;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px #909090;
+  overflow: hidden;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  & #navLogo {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: 25px;
+    & a {
+      font-size: 30px;
+      color: #fff;
+    }
+  }
+  & ul {
+    padding-left: 10px;
+    margin-top: 25px;
+    & li {
+      padding: 10px 0;
+      font-size: 1.2em;
+      & a {
+        color: $bodyColor;
+      }
+      & .navIcons {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.Main-Right {
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 10px;
+
+  & #userPopup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: -4px 4px 2px -2px #cecece;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    & a {
+      color: #7a7a7a;
+    }
+
+    & #expandIcon {
+      margin-left: 15px;
+      color: #7a7a7a;
+    }
+
+    & #profileIcon {
+      margin-right: 15px;
+      font-size: 2em;
+      color: #313131;
+    }
+  }
+}
